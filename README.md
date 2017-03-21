@@ -6,6 +6,8 @@
 
 Promisified jsdom setup and teardown for your test runner.
 
+Inspired from, and wraps, [jsdom-global](https://github.com/rstacruz/jsdom-global).
+
 ## Install
 
 ```sh
