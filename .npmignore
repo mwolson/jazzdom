@@ -7,6 +7,7 @@
 /.coveralls.yml
 /.nyc_output
 /node_modules
+/test
 /yarn.lock
 
 /src/**/*.test.js
