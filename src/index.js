@@ -24,3 +24,5 @@ export function create(html, { virtualConsole, created, ...restOptions }={}) {
     })
   }))
 }
+
+export default { create, destroy }
