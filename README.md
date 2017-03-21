@@ -67,5 +67,5 @@ MIT
 [coveralls-image]: https://coveralls.io/repos/github/mwolson/jazzdom/badge.svg?branch=master
 [coveralls-url]: https://coveralls.io/github/mwolson/jazzdom?branch=master
 
-[npm-image]: https://img.shields.io/npm/v/jazzdom?style=flat
+[npm-image]: https://img.shields.io/npm/v/jazzdom.svg
 [npm-url]: https://www.npmjs.com/package/jazzdom
