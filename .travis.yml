@@ -4,4 +4,4 @@ node_js:
 - '6.10'
 - '7.7'
 cache: yarn
-script: yarn run coverage
+script: yarn run coverage:travis
