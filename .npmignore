@@ -1,6 +1,10 @@
+.babelrc
+.editorconfig
+.eslintrc
 .gitignore
 .npmignore
 /node_modules
+/yarn.lock
 
 /lib/**/*.test.js
-/src
+/src/**/*.test.js
