@@ -5,7 +5,7 @@ import jazzdom from './'
 describe('jazzdom', () => {
   const Parent = ({ children }) => <div className="parent">{children}</div>
 
-  describe('before integration', () => {
+  describe('without jazzdom integration', () => {
     it('shallow renders without need of jsdom', () => {
       const wrapper = shallow(
         <Parent><div className="child" /></Parent>

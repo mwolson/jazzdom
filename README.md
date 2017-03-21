@@ -32,23 +32,26 @@ import jazzdom from 'jazzdom'
 describe('Example', () => {
   const Parent = ({ children }) => <div className="parent">{children}</div>
 
-  before(() => jazzdom.create())
-  after(() => jazzdom.destroy())
-
-  it('shallow renders without need of jsdom', () => {
-    const wrapper = shallow(
-      <Parent><div className="child" /></Parent>
-    )
-    expect(wrapper.find('div.child')).to.exist
+  describe('without jazzdom integration', () => {
+    it('shallow renders without need of jsdom', () => {
+      const wrapper = shallow(
+        <Parent><div className="child" /></Parent>
+      )
+      expect(wrapper.find('div.child')).to.exist
+    })
   })
 
-  it('mounts with the help of jsdom', () => {
-    const wrapper = mount(
-      <Parent><div className="child" /></Parent>
-    )
-    expect(wrapper.find('div.child')).to.exist
+  describe('with basic integration', () => {
+    before(() => jazzdom.create())
+    after(() => jazzdom.destroy())
+
+    it('mounts with the help of jsdom', () => {
+      const wrapper = mount(
+        <Parent><div className="child" /></Parent>
+      )
+      expect(wrapper.find('div.child')).to.exist
+    })
   })
-})
 ```
 
 ## Additional features compared to jsdom-global
