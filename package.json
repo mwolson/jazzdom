@@ -8,6 +8,7 @@
     "build:clean": "rimraf lib",
     "build:js": "babel -d lib/ src/",
     "lint": "eslint src --ext .js",
+    "prepublish": "run-s lint build",
     "test": "mocha \"src/**/.test.js\""
   },
   "repository": {
