@@ -1,6 +1,6 @@
 {
   "name": "jazzdom",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Promisified jsdom setup and teardown for your test runner.",
   "main": "lib/index.js",
   "scripts": {
