@@ -7,6 +7,7 @@
 Promisified jsdom setup and teardown for your test runner.
 
 Inspired from, and wraps, [jsdom-global](https://github.com/rstacruz/jsdom-global).
+Depends on [jsdom](https://github.com/tmpvar/jsdom).
 
 ## Install
 
@@ -53,6 +54,13 @@ describe('Example', () => {
     })
   })
 ```
+
+## Best practices
+
+* If you trust your tests to clean up after themselves, you may wish to call `jazzdom.create()` only once across your entire test suite, since that will result in significant speed improvements.
+* It can be good to separate fast and slow tests. "slow" tests would require `jazzdom.create()`, or other expensive tasks, and "fast" tests would not. Name them with slightly different patterns, and have two different test rules in `package.json` to call each suite. Prefer to have more fast tests and less slow tests. Instead of making multiple slow tests, consider making one slow test and spies for the remaining tests, if that makes sense for the situation.
+* Try to call `jazzdom.create()` and `jazzdom.destroy()` only when they're needed, such as with `enzyme.mount()`, and omit them with `enzyme.shallow()` and `enzyme.render()`.
+* It's almost never a good idea to put `jazzdom.create()` and `jazzdom.destroy()` in a `beforeEach()` or `afterEach()` block. Prefer `before()` and `after()` blocks, or in dedicated `it()` blocks if your test runner doesn't support `before`/`after`.
 
 ## Additional features compared to jsdom-global
 
