@@ -3,6 +3,7 @@
 .eslintrc
 .gitignore
 .npmignore
+.travis.yml
 /.nyc_output
 /node_modules
 /yarn.lock
