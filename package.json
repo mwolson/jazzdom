@@ -14,7 +14,7 @@
     "coverage:travis:report": "if-node-version ^6 run-s coverage:report",
     "lint": "eslint src test --ext .js",
     "lint:fix": "eslint src test --ext .js --fix",
-    "prepublish": "run-s lint build",
+    "prepublish": "run-s lint test build",
     "test": "mocha"
   },
   "repository": {
