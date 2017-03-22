@@ -6,4 +6,4 @@ node_js:
 cache: yarn
 notifications:
   email: false
-script: yarn run coverage:travis
+script: yarn run build:travis

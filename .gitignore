@@ -2,4 +2,6 @@
 /.nyc_output
 /coverage
 /lib
-/node_modules
+/test/integration/yarn.lock
+node_modules
+npm-debug.log

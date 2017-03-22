@@ -1,0 +1,5 @@
+--timeout 1000
+--reporter dot
+--require mocha-clean
+--require test/integration-mocha-setup
+--recursive
