@@ -44,6 +44,9 @@
     "jsdom": "*",
     "jsdom-global": "*"
   },
+  "dependencies": {
+    "stack-trace": "^0.0.9"
+  },
   "devDependencies": {
     "babel-cli": "^6.24.0",
     "babel-eslint": "^7.1.1",
@@ -72,7 +75,6 @@
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
     "rimraf": "^2.6.1",
-    "stack-trace": "^0.0.9",
     "testdouble": "^2.0.3",
     "testdouble-chai": "^0.5.0",
     "watch": "^1.0.2"
