@@ -7,7 +7,7 @@
     "build": "run-s build:clean build:js",
     "build:clean": "rimraf lib",
     "build:js": "babel --ignore \"*.test.js\" -d lib/ src/",
-    "coverage": "run-s coverage:test coverage:report:html coverage:check",
+    "coverage": "run-s coverage:test coverage:report:html",
     "coverage:check": "nyc check-coverage",
     "coverage:open": "open-cli coverage/index.html",
     "coverage:report": "run-s coverage:report:*",
@@ -19,7 +19,7 @@
     "coverage:travis:report": "if-node-version ^6 run-s coverage:report",
     "lint": "eslint src test --ext .js",
     "lint:fix": "eslint src test --ext .js --fix",
-    "prepublish": "run-s lint coverage build",
+    "prepublish": "run-s lint coverage coverage:check build",
     "test": "mocha \"src/**/*.test.js\"",
     "test:watch": "watch 'mocha \"src/**/*.test.js\" --reporter min' src --ignoreDotFiles"
   },
