@@ -66,7 +66,7 @@ describe('Example', () => {
 
 * Returns promises in separate `create()` and `destroy()` functions
 * Waits for jsdom `created` event to be fired before fulfilling or rejecting promise
-* If you forgot to `destroy()` the previous setup, `create()` does it for you automatically
+* If you forgot to `destroy()` the previous setup, the next `create()` call will throw an error that points to the previous invocation
 
 ## License
 

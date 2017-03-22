@@ -43,7 +43,7 @@ describe('jazzdom', () => {
 
     function expectCreateToThrowError() {
       expect(() => jazzdom.create())
-        .to.throw(`create() called multiple times; first is ${firstStackLine}`)
+        .to.throw(`create() called without a matching destroy() ${firstStackLine}`)
     }
 
     it('throws an error pointing to the first instance when called again', () => expectCreateToThrowError())

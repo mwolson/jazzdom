@@ -15,7 +15,7 @@ export function create(html, { virtualConsole, created, ...restOptions }={}) {
   if (destroyFn === defaultDestroyFn) {
     firstStackLine = abbreviateStackLine(new Error(), 1)
   } else {
-    throw new Error(`create() called multiple times; first is ${firstStackLine}`)
+    throw new Error(`previous create() called without a matching destroy() ${firstStackLine}`)
   }
 
   return new Promise((resolve, reject) => {
