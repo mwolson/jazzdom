@@ -1,8 +1,10 @@
 import chai from 'chai'
+import chaiAsPromised from 'chai-as-promised'
 import chaiEnzyme from 'chai-enzyme'
 import td from 'testdouble'
 import tdChai from 'testdouble-chai'
 
+chai.use(chaiAsPromised)
 chai.use(chaiEnzyme())
 chai.use(tdChai(td))
 

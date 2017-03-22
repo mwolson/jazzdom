@@ -1,8 +1,10 @@
-import jsdom from 'jsdom'
-import jsdomGlobal from 'jsdom-global'
+import * as jsdom from './jsdom'
+import * as jsdomGlobal from './jsdom-global'
+import abbreviateStackLine from './abbreviate-stack-line'
 
 const defaultDestroyFn = () => {}
 let destroyFn = defaultDestroyFn
+let firstStackLine
 
 export const destroy = () => Promise.resolve().then(() => {
   destroyFn()
@@ -10,11 +12,14 @@ export const destroy = () => Promise.resolve().then(() => {
 })
 
 export function create(html, { virtualConsole, created, ...restOptions }={}) {
-  return Promise.resolve().then(() => {
-    return destroyFn !== defaultDestroyFn ? destroy() : Promise.resolve()
-  })
-  .then(() => new Promise((resolve, reject) => {
-    destroyFn = jsdomGlobal(html, {
+  if (destroyFn === defaultDestroyFn) {
+    firstStackLine = abbreviateStackLine(new Error(), 1)
+  } else {
+    throw new Error(`create() called multiple times; first is ${firstStackLine}`)
+  }
+
+  return new Promise((resolve, reject) => {
+    destroyFn = jsdomGlobal.create(html, {
       virtualConsole: virtualConsole || jsdom.createVirtualConsole().sendTo(console),
       created: (err, window) => {
         err ? reject(err) : resolve(window)
@@ -22,7 +27,7 @@ export function create(html, { virtualConsole, created, ...restOptions }={}) {
       },
       ...restOptions,
     })
-  }))
+  })
 }
 
 export default { create, destroy }

@@ -4,4 +4,3 @@
 --require mocha-clean
 --require test/mocha-setup
 --recursive
-src/**/*.test.js
