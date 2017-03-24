@@ -17,7 +17,7 @@ yarn add -D jazzdom jsdom jsdom-global
 
 ## Setup
 
-**Setting up and tearing down for tests that need a document object**
+**Option 1: Setting up and tearing down for tests that need a document object**
 
 ```js
 import jazzdom from 'jazzdom'
@@ -29,7 +29,9 @@ describe('some tests', () => {
 }
 ```
 
-**Global setup line for test/mocha.opts**
+**Option 2: Global setup line for test/mocha.opts**
+
+Don't do this if you plan to use the other setup option.
 
 ```js
 --require jazzdom/register
