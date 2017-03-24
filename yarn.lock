@@ -2676,6 +2676,20 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
+lnfs-cli@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/lnfs-cli/-/lnfs-cli-1.0.1.tgz#3f52f19dad10b431883d6f626a4c6747421d43b7"
+  dependencies:
+    lnfs "^2.0.0"
+    meow "^3.3.0"
+
+lnfs@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/lnfs/-/lnfs-2.0.0.tgz#ca1d6df33a40c7d720f07afbb2b9e6c17a814b19"
+  dependencies:
+    mkdirp "^0.5.0"
+    rimraf "^2.2.8"
+
 load-json-file@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-1.1.0.tgz#956905708d58b4bab4c2261b04f59f31c99374c0"
@@ -2844,7 +2858,7 @@ md5-o-matic@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/md5-o-matic/-/md5-o-matic-0.1.1.tgz#822bccd65e117c514fab176b25945d54100a03c3"
 
-meow@^3.7.0:
+meow@^3.3.0, meow@^3.7.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/meow/-/meow-3.7.0.tgz#72cb668b425228290abbfa856892587308a801fb"
   dependencies:
@@ -4070,6 +4084,10 @@ trim-newlines@^1.0.0:
 trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
+
+"true@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/true/-/true-0.0.4.tgz#921ebfbd58122d3a66cfff6dc054daf269eb9f21"
 
 tryit@^1.0.1:
   version "1.0.3"

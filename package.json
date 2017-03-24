@@ -24,7 +24,9 @@
     "lint:fix": "eslint . --ext .js --fix",
     "prepublish": "in-publish && run-s lint coverage coverage:check build test:integration || not-in-publish",
     "test": "mocha \"src/**/*.test.js\"",
-    "test:integration": "cd test/integration && yarn install --force --no-lockfile",
+    "test:integration": "run-s test:integration:clean test:integration:run",
+    "test:integration:clean": "rimraf test/integration/node_modules && mkdirp test/integration/node_modules && lnfs . test/integration/node_modules/jazzdom",
+    "test:integration:run": "cd test/integration && yarn",
     "test:watch": "watch 'mocha \"src/**/*.test.js\" --reporter min' src --ignoreDotFiles"
   },
   "repository": {
@@ -79,6 +81,8 @@
     "in-publish": "^2.0.0",
     "jsdom": "^9.12.0",
     "jsdom-global": "^2.1.1",
+    "lnfs-cli": "^1.0.1",
+    "mkdirp": "^0.5.1",
     "mocha": "^3.2.0",
     "mocha-clean": "^1.0.0",
     "mocha-lcov-reporter": "^1.0.0",

@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "Integration tests for jazzdom.",
   "scripts": {
-    "preinstall": "rimraf yarn.lock",
     "postinstall": "mocha \"*.test.js\""
   },
   "repository": {
@@ -22,7 +21,6 @@
     "chai-as-promised": "^6.0.0",
     "mocha": "^3.2.0",
     "mocha-clean": "^1.0.0",
-    "rimraf": "^2.6.1",
     "testdouble": "^2.0.3",
     "testdouble-chai": "^0.5.0"
   }
